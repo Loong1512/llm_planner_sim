@@ -1,0 +1,19 @@
+#!/usr/bin/env python
+from llm_grabbing_bringup.arguments import get_config
+from llm_grabbing_bringup.interfaces import setup_LMP
+from llm_grabbing_bringup.utils import set_lmp_objects
+
+def main():
+
+    config = get_config('rlbench')
+    # for lmp_name, cfg in config['lmp_config']['lmps'].items():
+    #     cfg['model'] = 'gpt-4'
+    lmps = setup_LMP(config, debug=False)
+    ui = lmps['plan_ui']
+    print('--env setting finish--')
+
+    set_lmp_objects(lmps, ["yellow cube", "bowl"])
+    ui('put the yellow cube into the bowl')
+
+if __name__ == '__main__':
+    main()

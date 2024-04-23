@@ -1,0 +1,20 @@
+#!/usr/bin/env python
+import rospy
+from llm_grabbing_bringup.perception_utils import query_obj_position
+from llm_grabbing_bringup.controller_utils import reset_to_default_pose, move_to_position, close_gripper, open_gripper
+
+
+def main():
+    # blue_block_position = query_obj_position("blue block")
+    # move_to_position(blue_block_position.x, blue_block_position.y, blue_block_position.z)
+    # close_gripper()
+    # reset_to_default_pose()
+    # yellow_block_position = query_obj_position("yellow block")
+    # move_to_position(yellow_block_position.x, yellow_block_position.y, yellow_block_position.z + 0.05)
+    open_gripper()
+    
+
+
+if __name__ == '__main__':
+    main()
+    rospy.spin()

@@ -1,0 +1,59 @@
+<launch>
+    <arg name="sim" default="true"></arg>
+
+    <!-- 启动相机 -->
+    <!-- <include file="$(find openni2_launch)/launch/openni2.launch" >
+    </include> -->
+
+    <!-- start the realsense -->
+    <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" >
+        <arg name="filters" value="pointcloud" />
+    </include>
+
+    <!-- 仿真 -->
+    <!-- <group if="$(arg sim)">
+        <include file="$(find ur_gazebo)/launch/ur5_bringup.launch"></include>
+        <include file="$(find ur5_moveit_config)/launch/moveit_planning_execution.launch">
+            <arg name="sim" value="true" />  
+        </include>
+    </group> -->
+
+    <!-- 真实机器人 -->
+    <group>
+        <include file="$(find ur_robot_driver)/launch/ur5_bringup.launch">
+            <arg name="kinematics_config" value="/home/long/my_robot_calibration.yaml" />
+            <arg name="robot_ip" value="192.168.1.10" />
+        </include>
+        <include file="$(find ur5_moveit_config)/launch/moveit_planning_execution.launch">
+        </include>
+    </group>
+
+    <!-- rviz -->
+    <include file="$(find ur5_moveit_config)/launch/moveit_rviz.launch">
+    </include>
+
+    <!-- 相机坐标转换 -->
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="camera_wrist_3_broadcaster" 
+        args="0.12081903573940722 1.225029874759412 0.73912751283399 -0.11473043439794839 -0.8580898470108025 0.4695000576872917 0.17346019056678666 base_link camera_link">
+    </node> -->
+
+    <!-- <node pkg="tf2_ros" type="static_transform_publisher" name="camera_wrist_3_broadcaster" 
+        args="-0.4300417892574025 1.3064146992843204 0.998802211562245 0.021480616965170996 0.8870211423185385 -0.3183503326382258 0.3337441263660558 base_link camera_link">
+    </node> -->
+
+    <!-- 夹抓控制节点 -->
+    <node pkg="robotiq_2f_gripper_control" type="Robotiq2FGripperRtuNode.py" name="robotiq_2f_gripper" args="/dev/ttyUSB0" output="screen">
+    </node>
+
+    <!-- start ArUco -->
+    <node name="aruco_tracker" pkg="aruco_ros" type="single">
+        <remap from="/camera_info" to="/camera/color/camera_info" />
+        <remap from="/image" to="/camera/color/image_raw" />
+        <param name="image_is_rectified" value="true"/>
+        <param name="marker_size"        value="0.06"/>
+        <param name="marker_id"          value="521"/>
+        <param name="reference_frame"    value="camera_link"/>
+        <param name="camera_frame"       value="camera_color_optical_frame"/>
+        <param name="marker_frame"       value="camera_marker" />
+    </node>
+</launch>

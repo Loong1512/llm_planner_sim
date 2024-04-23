@@ -1,0 +1,44 @@
+import action_utils import composer
+
+objects = ['blue block', 'yellow block']
+# Query: place the blue block on the yellow block.
+composer("grasp the blue block")
+composer("back to default pose")
+composer("move to 5cm on top of the yellow block")
+composer("open gripper")
+# done
+
+objects = ['tissue box', 'tissue', 'bowl']
+# Query: Can you pass me a tissue and place it next to the bowl?
+composer("grasp the tissue")
+composer("back to default pose")
+composer("move to 10cm to the right of the bowl")
+composer("open gripper")
+composer("back to default pose")
+# done
+
+objects = ['charger', 'power strip']
+# Query: unplug the charger from the power strip.
+composer("grasp the charger")
+composer("back to default pose")
+# done
+
+objects = ['grape', 'lemon', 'drill', 'router', 'bread', 'tray']
+# Query: put the sweeter fruit in the tray that contains the bread.
+composer("grasp the grape")
+composer("back to default pose")
+composer("move to the top of the tray that contains the bread")
+composer("open gripper")
+# done
+
+objects = ['cyan bowl', 'yellow bowl', 'box', 'ice cream']
+# Query: move to the top of the cyan bowl.
+composer("move to the top of the cyan bowl")
+# done
+
+objects = ['lamp', 'switch']
+# Query: Turn off the lamp.
+composer("close the gripper")
+composer("move to the center of the switch")
+composer("back to default pose")
+# done

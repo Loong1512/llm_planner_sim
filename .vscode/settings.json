@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./src/llm_grabbing_bringup/src",
+        "./devel/lib/python3/dist-packages"
+    ]
+}

@@ -1,0 +1,24 @@
+#!/usr/bin/env python3
+from llm_grabbing_bringup.action_lib import move_to_position, close_gripper, open_gripper
+
+def main():
+
+    move_to_position('yellow_box_0')
+    close_gripper('yellow_box_0')
+    move_to_position('yellow_box_0_top')
+    open_gripper('yellow_box_0')
+
+    move_to_position('red_box')
+    close_gripper('red_box')
+    move_to_position('red_box_top')
+    open_gripper('red_box')
+ 
+    move_to_position('yellow_box_1')
+    close_gripper('yellow_box_1')
+    move_to_position('yellow_box_1_top')
+    open_gripper('yellow_box_1')
+
+    move_to_position('default')  
+
+if __name__ == '__main__':
+    main()
