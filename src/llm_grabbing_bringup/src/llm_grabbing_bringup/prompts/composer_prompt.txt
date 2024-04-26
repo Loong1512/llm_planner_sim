@@ -23,21 +23,30 @@ close_gripper()
 # Query: move ee forward for 10cm.
 move_gripper(0, 0.1, 0)
 
-# Query: place it to the right of the brown block.
-brown_block_position = query_obj_position("brown block")
-move_to_position(brown_block_position.x + 0.1, brown_block_position.y, brown_block_position.z)
-
-# Query: drop the yellow block inside container.
-container_position = query_obj_position("container")
-move_to_position(container_position.x, container_position.y, container_position.z + 0.2)
-open_gripper()
-
 # Query: put in the tray.
 tray_position = query_obj_position("tray")
 move_to_position(tray_position.x, tray_position.y, tray_position.z + 0.2)
 open_gripper()
 
-# Query: move to the top of the plate and face the plate.
-plate_position = query_obj_position("the plate")
-move_to_position(plate_position.x, plate_position.y, plate_position.z + 0.2)
+# Query: put in the plate at a lower height.
+tray_position = query_obj_position("tray")
+move_to_position(tray_position.x, tray_position.y, tray_position.z + 0.1)
+open_gripper()
+
+# Query: put in the plate that contains the red block.
+plate_positions = query_obj_positions('plate')
+red_block_position = query_obj_position('red block')
+for plate_position in plate_positions:
+    if distance(red_block_position, plate_position) < 0.1:
+        red_block_plate = plate_position
+        break
+move_to_position(red_block_plate.x, red_block_plate.y, red_block_plate.z + 0.2)
+open_gripper()
+
+# Query: face the plate.
 rotate_ee_face_down()
+
+# Query: grasp the first blue block from the table.
+blue_block_position = query_obj_position("blue block_1")
+move_to_position(blue_block_position.x, blue_block_position.y, blue_block_position.z)
+close_gripper()

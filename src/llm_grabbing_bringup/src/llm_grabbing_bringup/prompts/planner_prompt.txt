@@ -31,3 +31,19 @@ composer("close the gripper")
 composer("move to the center of the switch")
 composer("back to default pose")
 # done
+
+objects = ["plate_1", "plate_2", "yellow block", "red block"]
+# Query: Put the yellow block in the plate that contains the red block.
+composer("grasp the yellow block")
+composer("put in the plate that contains the red block")
+composer("back to default pose")
+# done
+
+objects = ["plate_1", "plate_2", "yellow block_1", "yellow block_2", "red block"]
+# Query: Put all the yellow block in the plate that contains the red block.
+composer("grasp the first yellow block")
+composer("put in the plate that contains the red block")
+composer("grasp the second yellow block")
+composer("put in the plate that contains the red block")
+composer("back to default pose")
+# done

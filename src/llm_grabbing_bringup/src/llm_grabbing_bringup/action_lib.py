@@ -134,13 +134,13 @@ def reset_to_default_pose():
 
 def close_gripper():
 
-    # test1
-    name = 'eraser'
-    size = 0.36
-
-    # # test2
-    # name = 'yellow_box'
+    # # test1
+    # name = 'eraser'
     # size = 0.36
+
+    # test2
+    name = 'yellow_box'
+    size = 0.36
 
     gripper_group = get_move_group("gripper")
     finger_joint_name = "finger_joint"
@@ -159,11 +159,11 @@ def close_gripper():
 
 def open_gripper():
 
-    # test1
-    name = 'eraser'
+    # # test1
+    # name = 'eraser'
 
-    # # test2
-    # name = 'yellow_box'
+    # test2
+    name = 'yellow_box'
 
     req = AttachRequest()
     req.model_name_1 = name

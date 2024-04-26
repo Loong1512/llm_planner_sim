@@ -3,7 +3,9 @@ import numpy as np
 # from llm_grabbing_bringup.controller_utils import reset_to_default_pose
 # from llm_grabbing_bringup.perception_utils import get_all_obj_pos
 from llm_grabbing_bringup.action_lib import move_to_position, reset_to_default_pose, close_gripper, open_gripper
-from llm_grabbing_bringup.env import query_obj_position
+from llm_grabbing_bringup.env import query_obj_position, query_obj_positions
+from geometry_msgs.msg import Point
+
 
 class LMP_interface():
   
@@ -19,6 +21,9 @@ class LMP_interface():
   def query_obj_position(self, obj):
     return query_obj_position(obj)
   
+  def query_obj_positions(self, obj):
+    return query_obj_positions(obj)
+  
   def reset_to_default_pose(self):
     return reset_to_default_pose()
   
@@ -27,6 +32,9 @@ class LMP_interface():
   
   def open_gripper(self):
     return open_gripper()
+  
+  def distance(self, p1: Point, p2: Point):
+    return ((p1.x - p2.x)**2 + (p1.y - p2.y)**2 + (p1.z - p2.z)**2)**0.5
 
 
 def setup_LMP(general_config, debug=False):

@@ -27,7 +27,7 @@ def main():
     lmps = setup_LMP(config, debug=False)
     ui = lmps['plan_ui']
     
-    set_lmp_objects(lmps, ["eraser", "storage box", "coffee cup", "coffee machine", "bowl", "coke can", "paper cup", "trash bin"])
+    set_lmp_objects(lmps, ["eraser", "storage box", "coffee cup", "coke can", "paper cup", "trash bin"])
     ui('Put the stationery into the storage box')
 
 if __name__ == '__main__':
