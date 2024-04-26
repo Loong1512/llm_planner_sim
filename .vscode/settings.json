@@ -1,5 +1,6 @@
 {
     "python.analysis.extraPaths": [
+        "/opt/ros/noetic/lib/python3/dist-packages",
         "./src/llm_grabbing_bringup/src",
         "./devel/lib/python3/dist-packages"
     ]

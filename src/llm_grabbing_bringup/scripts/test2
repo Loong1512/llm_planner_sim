@@ -1,13 +1,44 @@
 #!/usr/bin/env python
-from llm_grabbing_bringup.action_lib import move_to_position, close_gripper, open_gripper
+from llm_grabbing_bringup.action_lib import move_to_position, close_gripper, open_gripper, reset_to_default_pose
+from llm_grabbing_bringup.env import query_obj_position, query_obj_positions, distance
+from llm_grabbing_bringup.arguments import get_config
+from llm_grabbing_bringup.interfaces import setup_LMP
+from llm_grabbing_bringup.utils import set_lmp_objects
 
 def main():
-    move_to_position('default')   
-    move_to_position('green_cup')
+
+    # Put the yellow block into the bowl with the red block
+
+    # find the bowl with the red block in it
+    bowl_positions = query_obj_positions('bowl')
+    red_block_position = query_obj_position('red block')
+    for bowl_position in bowl_positions:
+        if distance(red_block_position, bowl_position) < 0.1:
+            bowl_with_red = bowl_position
+            break
+    ret_val = bowl_with_red
+    
+    
+        
+    # grasp the yellow block
+    yellow_block_position = query_obj_position('yellow block')
+    move_to_position(yellow_block_position.x, yellow_block_position.y, yellow_block_position.z)
     close_gripper()
-    move_to_position('green_bowl_top')
-    move_to_position('green_bowl')
+
+    # put into the found bowl
+    move_to_position(ret_val.x, ret_val.y, ret_val.z + 0.2)
     open_gripper()
-    move_to_position('default')
+
+    # back to default pose
+    reset_to_default_pose()
+
+
+    # config = get_config('rlbench')
+    # lmps = setup_LMP(config, debug=False)
+    # ui = lmps['plan_ui']
+    
+    # set_lmp_objects(lmps, ["green bowl", "blue bowl", "yellow block", "red block"])
+    # ui('Put the stationery into the storage box')
+
 if __name__ == '__main__':
     main()

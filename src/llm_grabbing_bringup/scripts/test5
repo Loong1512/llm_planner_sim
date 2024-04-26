@@ -20,5 +20,15 @@ def main():
 
     move_to_position('default')  
 
+
+    # objects_position = get_all_obj_pos()                   
+    # for object_position in objects_position:
+
+    #     if object_position["key"] == 'red_box':
+    #         continue
+    #     elif object_position["key"] == 'yellow_box':
+    #         move_to_position(object_position["yellow_box"])
+    #         continue            
+
 if __name__ == '__main__':
     main()

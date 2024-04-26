@@ -1936,97 +1936,6 @@ clean_test_results_ur_description/fast:
 .PHONY : clean_test_results_ur_description/fast
 
 #=============================================================================
-# Target rules for targets named run_tests_ur_robotiq_gazebo
-
-# Build rule for target.
-run_tests_ur_robotiq_gazebo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_robotiq_gazebo
-.PHONY : run_tests_ur_robotiq_gazebo
-
-# fast build rule for target.
-run_tests_ur_robotiq_gazebo/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/build.make ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/build
-.PHONY : run_tests_ur_robotiq_gazebo/fast
-
-#=============================================================================
-# Target rules for targets named clean_test_results_ur_robotiq_gazebo
-
-# Build rule for target.
-clean_test_results_ur_robotiq_gazebo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 clean_test_results_ur_robotiq_gazebo
-.PHONY : clean_test_results_ur_robotiq_gazebo
-
-# fast build rule for target.
-clean_test_results_ur_robotiq_gazebo/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/build.make ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/build
-.PHONY : clean_test_results_ur_robotiq_gazebo/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_robotiq_gazebo
-
-# Build rule for target.
-_run_tests_ur_robotiq_gazebo: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_robotiq_gazebo
-.PHONY : _run_tests_ur_robotiq_gazebo
-
-# fast build rule for target.
-_run_tests_ur_robotiq_gazebo/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/build.make ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/build
-.PHONY : _run_tests_ur_robotiq_gazebo/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_robotiq_gazebo_roslaunch-check
-
-# Build rule for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_robotiq_gazebo_roslaunch-check
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check
-
-# fast build rule for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build.make ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# Build rule for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# fast build rule for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build.make ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast
-
-#=============================================================================
-# Target rules for targets named _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# Build rule for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# fast build rule for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build.make ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast
-
-#=============================================================================
-# Target rules for targets named run_tests_ur_robotiq_gazebo_roslaunch-check
-
-# Build rule for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 run_tests_ur_robotiq_gazebo_roslaunch-check
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check
-
-# fast build rule for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check/fast:
-	$(MAKE) -f ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build.make ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check/fast
-
-#=============================================================================
 # Target rules for targets named shape_msgs_generate_messages_py
 
 # Build rule for target.
@@ -2526,13 +2435,6 @@ help:
 	@echo "... run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml"
 	@echo "... _run_tests_ur_description_roslaunch-check_tests_roslaunch_test_ur5.xml"
 	@echo "... clean_test_results_ur_description"
-	@echo "... run_tests_ur_robotiq_gazebo"
-	@echo "... clean_test_results_ur_robotiq_gazebo"
-	@echo "... _run_tests_ur_robotiq_gazebo"
-	@echo "... _run_tests_ur_robotiq_gazebo_roslaunch-check"
-	@echo "... run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml"
-	@echo "... _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml"
-	@echo "... run_tests_ur_robotiq_gazebo_roslaunch-check"
 	@echo "... shape_msgs_generate_messages_py"
 	@echo "... octomap_msgs_generate_messages_eus"
 	@echo "... object_recognition_msgs_generate_messages_eus"

@@ -12,8 +12,13 @@ def main():
     ui = lmps['plan_ui']
     print('--env setting finish--')
 
-    set_lmp_objects(lmps, ["yellow cube", "bowl"])
-    ui('put the yellow cube into the bowl')
+    # set_lmp_objects(lmps, ["yellow cube", "bowl"])
+    # ui('put the yellow cube into the bowl')
 
+    # set_lmp_objects(lmps, ["yellow_box_0", "red_box", "yellow_box_1"])
+    # ui('Move all the blocks, move the red block to the left and the yellow block to the right, the moving distance is 10cm')
+
+    set_lmp_objects(lmps, ["eraser", "storage box", "coffee cup", "coffee machine", "bowl", "coke can", "paper cup", "trash bin"])
+    ui('Put the stationery into the storage box')
 if __name__ == '__main__':
     main()

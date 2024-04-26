@@ -1,10 +1,34 @@
 #!/usr/bin/env python
-from llm_grabbing_bringup.action_lib import move_to_position, close_gripper, open_gripper
+from llm_grabbing_bringup.action_lib import move_to_position, close_gripper, open_gripper, reset_to_default_pose
+from llm_grabbing_bringup.env import query_obj_position
+from llm_grabbing_bringup.arguments import get_config
+from llm_grabbing_bringup.interfaces import setup_LMP
+from llm_grabbing_bringup.utils import set_lmp_objects
 
 def main():
-    # move_to_position('default')   
-    # move_to_position('hammer')
+
+    # # Put the stationery into the storage box
+
+    # # grasp the eraser
+    # erase_position = query_obj_position("eraser")
+    # move_to_position(erase_position.x, erase_position.y, erase_position.z)
     # close_gripper()
-    move_to_position('default')
+
+    # # put into the storage box
+    # box_position = query_obj_position("storage box")
+    # move_to_position(box_position.x, box_position.y, box_position.z + 0.2)
+    # open_gripper()
+
+    # # # move to the default position
+    # reset_to_default_pose()
+
+
+    config = get_config('rlbench')
+    lmps = setup_LMP(config, debug=False)
+    ui = lmps['plan_ui']
+    
+    set_lmp_objects(lmps, ["eraser", "storage box", "coffee cup", "coffee machine", "bowl", "coke can", "paper cup", "trash bin"])
+    ui('Put the stationery into the storage box')
+
 if __name__ == '__main__':
     main()

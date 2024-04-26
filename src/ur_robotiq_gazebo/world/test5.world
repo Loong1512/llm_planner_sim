@@ -77,7 +77,7 @@
     <scene>
       <ambient>0.4 0.4 0.4 1</ambient>
       <background>0.7 0.7 0.7 1</background>
-      <shadows>1</shadows>
+      <shadows>0</shadows>
     </scene>
     <wind/>
     <spherical_coordinates>
@@ -587,7 +587,7 @@
             </shader>
             <ambient>1 0 0 1</ambient>
             <diffuse>0 0 0 1</diffuse>
-            <specular>0.1 0.1 0.1 1</specular>
+            <specular>0 0 0 1</specular>
             <emissive>0 0 0 1</emissive>
           </material>
           <pose>0 0 0 0 -0 0</pose>

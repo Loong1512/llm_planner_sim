@@ -67,7 +67,7 @@
   <xacro:include filename="$(find ur_robotiq_gazebo)/urdf/_d435.urdf.xacro" />
 
   <xacro:sensor_d435 parent="wrist_3_link" name="camera_depth" topics_ns="camera_depth">
-    <origin xyz="0.08 0 0.05" rpy="0 ${-pi/2} ${pi}"/>
+    <origin xyz="0.042 0 0.05" rpy="0 ${-pi/2} ${pi}"/>
   </xacro:sensor_d435>
 
   <!--

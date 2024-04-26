@@ -2,37 +2,31 @@ from llm_grabbing_bringup.LMP import LMP
 import numpy as np
 # from llm_grabbing_bringup.controller_utils import reset_to_default_pose
 # from llm_grabbing_bringup.perception_utils import get_all_obj_pos
-# from llm_grabbing_bringup.action_lib import move_to_position
-from geometry_msgs.msg import Point
+from llm_grabbing_bringup.action_lib import move_to_position, reset_to_default_pose, close_gripper, open_gripper
+from llm_grabbing_bringup.env import query_obj_position
 
 class LMP_interface():
   
   # # ======================================================
   # # == functions exposed to LLM
   # # ======================================================
-  def get_obj_name(self):
-    return self.object_names[::]
+  # def get_obj_name(self):
+  #   return self.object_names[::]
   
   def move_to_position(self, x, y, z):
-    return
-    # return move_to_position(obj)
+    return move_to_position(x, y, z)
   
   def query_obj_position(self, obj):
-    point = Point()
-    point.x = 0.3
-    point.y = 0.3
-    point.z = 0.3
-    return point
+    return query_obj_position(obj)
   
   def reset_to_default_pose(self):
-    return
-    # return move_to_position("default")
+    return reset_to_default_pose()
   
   def close_gripper(self):
-    return
+    return close_gripper()
   
   def open_gripper(self):
-    return
+    return open_gripper()
 
 
 def setup_LMP(general_config, debug=False):

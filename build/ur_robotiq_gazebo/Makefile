@@ -80,27 +80,27 @@ install/local/fast: preinstall/fast
 	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
 .PHONY : install/local/fast
 
-# Special rule for the target test
-test:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	/usr/bin/ctest --force-new-ctest-process $(ARGS)
-.PHONY : test
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target test
-test/fast: test
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
-.PHONY : test/fast
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+.PHONY : list_install_components/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -113,27 +113,27 @@ rebuild_cache/fast: rebuild_cache
 
 .PHONY : rebuild_cache/fast
 
-# Special rule for the target list_install_components
-list_install_components:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
-.PHONY : list_install_components
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target list_install_components
-list_install_components/fast: list_install_components
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
 
-.PHONY : list_install_components/fast
+.PHONY : edit_cache/fast
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	/usr/bin/ctest --force-new-ctest-process $(ARGS)
+.PHONY : test
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target test
+test/fast: test
+
+.PHONY : test/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -167,111 +167,6 @@ depend:
 	cd /home/ros/ur5_sim/build && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/rule
-
-# Convenience name for target.
-run_tests_ur_robotiq_gazebo: ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/rule
-
-.PHONY : run_tests_ur_robotiq_gazebo
-
-# fast build rule for target.
-run_tests_ur_robotiq_gazebo/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/build.make ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo.dir/build
-.PHONY : run_tests_ur_robotiq_gazebo/fast
-
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/rule
-
-# Convenience name for target.
-clean_test_results_ur_robotiq_gazebo: ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/rule
-
-.PHONY : clean_test_results_ur_robotiq_gazebo
-
-# fast build rule for target.
-clean_test_results_ur_robotiq_gazebo/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/build.make ur_robotiq_gazebo/CMakeFiles/clean_test_results_ur_robotiq_gazebo.dir/build
-.PHONY : clean_test_results_ur_robotiq_gazebo/fast
-
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/rule
-
-# Convenience name for target.
-_run_tests_ur_robotiq_gazebo: ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/rule
-
-.PHONY : _run_tests_ur_robotiq_gazebo
-
-# fast build rule for target.
-_run_tests_ur_robotiq_gazebo/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/build.make ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo.dir/build
-.PHONY : _run_tests_ur_robotiq_gazebo/fast
-
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule
-
-# Convenience name for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check: ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule
-
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check
-
-# fast build rule for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build.make ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check/fast
-
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule
-
-# Convenience name for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml: ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule
-
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# fast build rule for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build.make ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast
-
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule
-
-# Convenience name for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml: ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/rule
-
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml
-
-# fast build rule for target.
-_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build.make ur_robotiq_gazebo/CMakeFiles/_run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml.dir/build
-.PHONY : _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml/fast
-
-# Convenience name for target.
-ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f CMakeFiles/Makefile2 ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule
-.PHONY : ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule
-
-# Convenience name for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check: ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/rule
-
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check
-
-# fast build rule for target.
-run_tests_ur_robotiq_gazebo_roslaunch-check/fast:
-	cd /home/ros/ur5_sim/build && $(MAKE) -f ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build.make ur_robotiq_gazebo/CMakeFiles/run_tests_ur_robotiq_gazebo_roslaunch-check.dir/build
-.PHONY : run_tests_ur_robotiq_gazebo_roslaunch-check/fast
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -279,19 +174,12 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... install/strip"
-	@echo "... run_tests_ur_robotiq_gazebo"
-	@echo "... clean_test_results_ur_robotiq_gazebo"
-	@echo "... _run_tests_ur_robotiq_gazebo"
-	@echo "... _run_tests_ur_robotiq_gazebo_roslaunch-check"
-	@echo "... run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml"
 	@echo "... install/local"
-	@echo "... _run_tests_ur_robotiq_gazebo_roslaunch-check_tests_roslaunch_test_ur5.xml"
-	@echo "... run_tests_ur_robotiq_gazebo_roslaunch-check"
-	@echo "... test"
-	@echo "... edit_cache"
-	@echo "... rebuild_cache"
-	@echo "... list_install_components"
 	@echo "... install"
+	@echo "... list_install_components"
+	@echo "... rebuild_cache"
+	@echo "... edit_cache"
+	@echo "... test"
 .PHONY : help
 
 
