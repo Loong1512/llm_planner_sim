@@ -31,11 +31,3 @@ composer("close the gripper")
 composer("move to the center of the switch")
 composer("back to default pose")
 # done
-
-objects = ["plate_1", "plate_2", "yellow block", "red block"]
-# Query: Put the yellow block into the plate with the red block.
-plate_name = composer("find the plate with the red block in it")
-composer("grasp the yellow block")
-composer("put into {plate_name}")
-composer("back to default pose")
-# done

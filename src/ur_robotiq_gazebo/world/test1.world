@@ -791,7 +791,7 @@
           <pose>-0.058973 -0.055908 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/.gazebo/models/cup_paper/meshes/lid.dae</uri>
+              <uri>model://cup_paper/meshes/lid.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -1447,7 +1447,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/.gazebo/models/file_box_2/meshes/body.dae</uri>
+              <uri>model://file_box_2/meshes/body.dae</uri>
               <scale>0.5 0.5 0.3</scale>
             </mesh>
           </geometry>
@@ -1546,7 +1546,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/.gazebo/models/can_coke/meshes/body.dae</uri>
+              <uri>model://can_coke/meshes/body.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>
@@ -1643,7 +1643,7 @@
           <pose>0 0 0 0 -0 0</pose>
           <geometry>
             <mesh>
-              <uri>/home/ros/.gazebo/models/can_coke/meshes/metal.dae</uri>
+              <uri>model://can_coke/meshes/metal.dae</uri>
               <scale>1 1 1</scale>
             </mesh>
           </geometry>

@@ -2,7 +2,7 @@ from geometry_msgs.msg import Point
 
 obj_ori_loc_dict = {
     "eraser": (-0.060578, 0.348331, 1.015129),
-    "storage box": (-0.231700, 0.480407, 1.026760),
+    "storage box": (-0.231700, 0.480407, 1.126760),
     "coffee cup": (7, 8, 9),
     "coke can": (16, 17, 18),
     "paper cup": (19, 20, 21),
