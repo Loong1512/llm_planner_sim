@@ -7,16 +7,16 @@ from llm_grabbing_bringup.utils import set_lmp_objects
 
 def main():
 
-    # Put the yellow block into the bowl with the red block
+    # Put the yellow block into the plate with the red block
 
-    # find the bowl with the red block in it
-    bowl_positions = query_obj_positions('bowl')
+    # find the plate with the red block in it
+    plate_positions = query_obj_positions('plate')
     red_block_position = query_obj_position('red block')
-    for bowl_position in bowl_positions:
-        if distance(red_block_position, bowl_position) < 0.1:
-            bowl_with_red = bowl_position
+    for plate_position in plate_positions:
+        if distance(red_block_position, plate_position) < 0.1:
+            plate_with_red_block = plate_position
             break
-    ret_val = bowl_with_red
+    ret_val = plate_with_red_block
     
     
         
@@ -25,7 +25,7 @@ def main():
     move_to_position(yellow_block_position.x, yellow_block_position.y, yellow_block_position.z)
     close_gripper()
 
-    # put into the found bowl
+    # put into the found plate
     move_to_position(ret_val.x, ret_val.y, ret_val.z + 0.2)
     open_gripper()
 
@@ -37,8 +37,8 @@ def main():
     # lmps = setup_LMP(config, debug=False)
     # ui = lmps['plan_ui']
     
-    # set_lmp_objects(lmps, ["green bowl", "blue bowl", "yellow block", "red block"])
-    # ui('Put the stationery into the storage box')
+    # set_lmp_objects(lmps, ["plate_1", "plate_2", "yellow block", "red block"])
+    # ui('Put the yellow block into the plate with the red block')
 
 if __name__ == '__main__':
     main()

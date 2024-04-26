@@ -42,4 +42,12 @@ plate_position = query_obj_position("the plate")
 move_to_position(plate_position.x, plate_position.y, plate_position.z + 0.2)
 rotate_ee_face_down()
 
+# Query: find the plate with the red block in it.
+plate_positions = query_obj_positions('plate')
+red_block_position = query_obj_position('red block')
+for plate_position in plate_positions:
+    if distance(red_block_position, plate_position) < 0.1:
+        plate_with_red_block = plate_position
+        break
+ret_val = plate_with_red_block
 

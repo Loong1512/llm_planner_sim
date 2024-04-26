@@ -138,6 +138,10 @@ def close_gripper():
     name = 'eraser'
     size = 0.36
 
+    # # test2
+    # name = 'yellow_box'
+    # size = 0.36
+
     gripper_group = get_move_group("gripper")
     finger_joint_name = "finger_joint"
     gripper_group.set_joint_value_target({finger_joint_name: size})
@@ -157,6 +161,9 @@ def open_gripper():
 
     # test1
     name = 'eraser'
+
+    # # test2
+    # name = 'yellow_box'
 
     req = AttachRequest()
     req.model_name_1 = name
