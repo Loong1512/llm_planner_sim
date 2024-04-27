@@ -1,9 +1,36 @@
 lmp_config:
   env:
-    map_size: 100
-    num_waypoints_per_plan: 10000  # set to a large number since we only do open loop for sim
-    max_plan_iter: 1
-    visualize: True
+    test1:
+      name:
+        - 'eraser'
+      link_name: 
+        - 'link'
+      joint_value: 
+        - 0.36
+    test2:
+      name:
+        - 'yellow_box'
+      link_name: 
+        - 'link'
+      joint_value: 
+        - 0.36
+    test4:
+      name:
+        - 'yellow_box'
+      link_name: 
+        - 'link'
+      joint_value: 
+        - 0.36
+    test6:
+      name:
+        - 'yellow_box'
+        - 'yellow_box_0'
+      link_name: 
+        - 'link'
+        - 'link'
+      joint_value: 
+        - 0.36
+        - 0.36
   lmps:
     planner:
       prompt_fname: planner_prompt

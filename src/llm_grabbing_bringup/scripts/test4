@@ -29,7 +29,7 @@ def main():
 
 
     config = get_config('rlbench')
-    lmps = setup_LMP(config, debug=False)
+    lmps = setup_LMP('test4', config, debug=False)
     ui = lmps['plan_ui']
     
     set_lmp_objects(lmps, ["plate_1", "plate_2", "yellow block", "red block"])

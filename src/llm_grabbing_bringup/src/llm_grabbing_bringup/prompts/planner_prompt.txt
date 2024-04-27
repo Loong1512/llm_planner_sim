@@ -43,7 +43,14 @@ objects = ["plate_1", "plate_2", "yellow block_1", "yellow block_2", "red block"
 # Query: Put all the yellow block in the plate that contains the red block.
 composer("grasp the first yellow block")
 composer("put in the plate that contains the red block")
+composer("move to the top of the second yellow block")
 composer("grasp the second yellow block")
 composer("put in the plate that contains the red block")
 composer("back to default pose")
 # done
+
+objects = ["eraser", "storage box", "coffee cup", "coke can", "paper cup", "trash bin"]
+# Query: Put the stationery into the storage box
+composer("grasp the eraser")
+composer("put in the storage box")
+composer("back to default pose")

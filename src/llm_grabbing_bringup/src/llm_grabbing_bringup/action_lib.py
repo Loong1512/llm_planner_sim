@@ -132,19 +132,19 @@ def reset_to_default_pose():
     arm_group.stop()
     arm_group.clear_pose_targets()
 
-def close_gripper():
+def close_gripper(name, link_name, joint_value):
 
     # # test1
     # name = 'eraser'
     # size = 0.36
 
-    # test2
-    name = 'yellow_box'
-    size = 0.36
+    # # test2 test4
+    # name = 'yellow_box'
+    # size = 0.36
 
     gripper_group = get_move_group("gripper")
     finger_joint_name = "finger_joint"
-    gripper_group.set_joint_value_target({finger_joint_name: size})
+    gripper_group.set_joint_value_target({finger_joint_name: joint_value})
     gripper_group.set_max_velocity_scaling_factor(1)
     gripper_group.go(wait=True)
     gripper_group.stop()
@@ -152,22 +152,22 @@ def close_gripper():
 
     req = AttachRequest()
     req.model_name_1 = name
-    req.link_name_1 = 'link'
+    req.link_name_1 = link_name
     req.model_name_2 = "robot"
     req.link_name_2 = "wrist_3_link"
     attach_srv.call(req)
 
-def open_gripper():
+def open_gripper(name, link_name):
 
     # # test1
     # name = 'eraser'
 
-    # test2
-    name = 'yellow_box'
+    # # test2 test4
+    # name = 'yellow_box'
 
     req = AttachRequest()
     req.model_name_1 = name
-    req.link_name_1 = 'link'
+    req.link_name_1 = link_name
     req.model_name_2 = "robot"
     req.link_name_2 = "wrist_3_link"
     detach_srv.call(req)

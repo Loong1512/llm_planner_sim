@@ -1,7 +1,7 @@
 from perception_utils import query_obj_position
 from controller_utils import move_to_position, reset_to_default_pose, close_gripper, open_gripper, rotate_ee_face_down
 
-# Query: grasp the blue block from the table.
+# Query: grasp the blue block.
 blue_block_position = query_obj_position("blue block")
 move_to_position(blue_block_position.x, blue_block_position.y, blue_block_position.z)
 close_gripper()
@@ -46,7 +46,11 @@ open_gripper()
 # Query: face the plate.
 rotate_ee_face_down()
 
-# Query: grasp the first blue block from the table.
+# Query: grasp the first blue block.
 blue_block_position = query_obj_position("blue block_1")
 move_to_position(blue_block_position.x, blue_block_position.y, blue_block_position.z)
 close_gripper()
+
+# Query: move to the top of the second blue block.
+blue_block_position = query_obj_position("blue block_2")
+move_to_position(blue_block_position.x, blue_block_position.y, blue_block_position.z + 0.1)

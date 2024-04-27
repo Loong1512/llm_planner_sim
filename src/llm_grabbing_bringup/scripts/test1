@@ -24,7 +24,7 @@ def main():
 
 
     config = get_config('rlbench')
-    lmps = setup_LMP(config, debug=False)
+    lmps = setup_LMP('test1', config, debug=False)
     ui = lmps['plan_ui']
     
     set_lmp_objects(lmps, ["eraser", "storage box", "coffee cup", "coke can", "paper cup", "trash bin"])

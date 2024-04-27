@@ -1313,7 +1313,7 @@
       </link>
       <static>0</static>
       <allow_auto_disable>1</allow_auto_disable>
-      <pose>0.007852 0.187638 0 0 -0 0</pose>
+      <pose>-0.044788 0.375096 1.04 1e-06 1.5e-05 6e-06</pose>
     </model>
   </world>
 </sdf>

@@ -11,7 +11,9 @@ def get_config(env=None, config_path=None):
     assert env is None or config_path is None, 'env and config_path cannot be both specified'
     if config_path is None:
         assert env.lower() == 'rlbench'
-        config_path = '/home/ros/ur5_sim/src/llm_grabbing_bringup/src/llm_grabbing_bringup/configs/rlbench_config.yaml'
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        config_path = os.path.join(script_dir, './configs/rlbench_config.yaml')
+        # config_path = './configs/rlbench_config.yaml'
     assert config_path and os.path.exists(config_path), f'config file does not exist ({config_path})'
     config = load_config(config_path)
     # wrap dict such that we can access config through attribute

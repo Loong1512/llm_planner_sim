@@ -67,6 +67,7 @@
     <param name="tf_prefix" value="$(arg tf_prefix)" />
   </node>
 
+  <arg name="node_start_delay" default="1.0"/>
   <!-- Start the 'driver' (ie: Gazebo in this case) -->
   <include file="$(dirname)/inc/ur_control.launch.xml">
     <arg name="controller_config_file" value="$(arg controller_config_file)"/>
