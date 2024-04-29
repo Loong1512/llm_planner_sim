@@ -1,8 +1,0 @@
-prefix=/home/ros/ur5_sim/install
-
-Name: robotiq_2f_85_gripper_gazebo
-Description: Description of robotiq_2f_85_gripper_gazebo
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

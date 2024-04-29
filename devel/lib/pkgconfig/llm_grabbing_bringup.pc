@@ -1,8 +1,0 @@
-prefix=/home/ros/ur5_sim/devel
-
-Name: llm_grabbing_bringup
-Description: Description of llm_grabbing_bringup
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

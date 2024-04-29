@@ -1,8 +1,0 @@
-prefix=/home/ros/ur5_sim/install
-
-Name: robotiq_modbus_rtu
-Description: Description of robotiq_modbus_rtu
-Version: 1.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: rospy
